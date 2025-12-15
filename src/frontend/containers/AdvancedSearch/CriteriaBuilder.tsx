@@ -24,18 +24,18 @@ const CriteriaBuilder = memo(function QueryBuilder({ keySelector, dispatch }: Qu
   return (
     <fieldset aria-labelledby="criteria-builder-label">
       <legend id="criteria-builder-label">
-        Criteria Builder
+        标准构建器 Criteria Builder
         <InfoButton>
-          A criteria is made of three components:
+          一个标准由三个组成部分构成：
           <ul>
             <li>
-              <b>key</b> (a property of the image file),
+              <b>条件 key</b> (图像文件的属性),
             </li>
             <li>
-              <b>operator</b> (decides how the property value is compared) and
+              <b>操作器 operator</b> (decides how the property value is compared) and
             </li>
             <li>
-              the matching <b>value</b>.
+              the matching <b>值 value</b>.
             </li>
           </ul>
           Every image that matches the criteria is shown.
@@ -50,9 +50,9 @@ const CriteriaBuilder = memo(function QueryBuilder({ keySelector, dispatch }: Qu
         </InfoButton>
       </legend>
       <div id="criteria-builder">
-        <label id="builder-key">Key</label>
-        <label id="builder-operator">Operator</label>
-        <label id="builder-value">Value</label>
+        <label id="builder-key">条件 Key</label>
+        <label id="builder-operator">操作器 Operator</label>
+        <label id="builder-value">值 Value</label>
         <span></span>
 
         <KeySelector

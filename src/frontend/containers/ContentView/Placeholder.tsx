@@ -75,28 +75,27 @@ const PreviewWindowPlaceholder = observer(() => {
 const Welcome = () => {
   const { uiStore } = useStore();
   return (
-    <ContentPlaceholder title="Welcome to Allusion" icon={<SVG src={LOGO_FC} />}>
+    <ContentPlaceholder title="欢迎来到  爱鹿寻" icon={<SVG src={LOGO_FC} />}>
       <p>
-        Allusion is a tool designed to help you organize your Visual Library, so you can easily find
-        what you need throughout your creative process.
+        Allusion是一款专为整理视觉素材库而设计的工具，助您在创作过程中轻松找到所需内容。
       </p>
       <p>
-        Allusion needs to know where to find your images.
+        Allusion需要知道在哪里找到你的图片。
         <br />
-        Add a Location to get started.
+        添加位置以开始使用。
       </p>
 
       <div className="divider" />
 
-      <p>New to Allusion?</p>
-      <Button styling="outlined" text="Open Help Center" onClick={uiStore.toggleHelpCenter} />
+      <p>首次使用 Allusion?</p>
+      <Button styling="outlined" text="打开帮助中心" onClick={uiStore.toggleHelpCenter} />
 
       <br />
       <br />
       <br />
 
       {/* Mention principles (?) */}
-      <small>Allusion is a read-only application. We&rsquo;ll never touch your files</small>
+      <small>Allusion是一款只读应用程序。我们绝不会触碰您的文件。</small>
     </ContentPlaceholder>
   );
 };
@@ -104,8 +103,8 @@ const Welcome = () => {
 const NoContentFound = () => {
   const { uiStore } = useStore();
   return (
-    <ContentPlaceholder title="No images" icon={IconSet.MEDIA}>
-      <p>Images can be added from the outliner</p>
+    <ContentPlaceholder title="无图片" icon={IconSet.MEDIA}>
+      <p>图片可从大纲视图中添加</p>
       <Button onClick={uiStore.toggleOutliner} text="Toggle outliner" styling="outlined" />
     </ContentPlaceholder>
   );
@@ -114,18 +113,18 @@ const NoContentFound = () => {
 const NoQueryContent = () => {
   const { fileStore } = useStore();
   return (
-    <ContentPlaceholder title="No images found" icon={IconSet.SEARCH}>
-      <p>Try searching for something else.</p>
+    <ContentPlaceholder title="未找到图片" icon={IconSet.SEARCH}>
+      <p>请尝试搜索其他内容。</p>
       {/* TODO: when search includes a Hidden tag, remind the user that's what might be causing them to see no results */}
       <ButtonGroup align="center">
         <Button
-          text="All images"
+          text="所有图片"
           icon={IconSet.MEDIA}
           onClick={fileStore.fetchAllFiles}
           styling="outlined"
         />
         <Button
-          text="Untagged"
+          text="未标记"
           icon={IconSet.TAG_BLANCO}
           onClick={fileStore.fetchUntaggedFiles}
           styling="outlined"
@@ -141,7 +140,7 @@ const NoUntaggedContent = () => {
     <ContentPlaceholder title="No untagged images" icon={IconSet.TAG}>
       <p>All images have been tagged. Nice work!</p>
       <Button
-        text="All Images"
+        text="所有图片"
         icon={IconSet.MEDIA}
         onClick={fileStore.fetchAllFiles}
         styling="outlined"
@@ -157,13 +156,13 @@ const NoMissingContent = () => {
       <p>Try searching for something else.</p>
       <ButtonGroup align="center">
         <Button
-          text="All images"
+          text="所有图片"
           icon={IconSet.MEDIA}
           onClick={fileStore.fetchAllFiles}
           styling="outlined"
         />
         <Button
-          text="Untagged"
+          text="未标记"
           icon={IconSet.TAG_BLANCO}
           onClick={fileStore.fetchUntaggedFiles}
           styling="outlined"
@@ -175,8 +174,8 @@ const NoMissingContent = () => {
 
 const BugReport = () => {
   return (
-    <ContentPlaceholder title="You encountered a bug!" icon={IconSet.WARNING_FILL}>
-      <p>Please report this bug to the maintainers!</p>
+    <ContentPlaceholder title="你遇到了一个错误！" icon={IconSet.WARNING_FILL}>
+      <p>请向维护者报告此错误!</p>
     </ContentPlaceholder>
   );
 };

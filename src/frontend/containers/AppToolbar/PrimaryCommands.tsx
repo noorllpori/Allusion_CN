@@ -98,7 +98,7 @@ const FileSelectionCommand = observer(() => {
       onClick={handleToggleSelect}
       pressed={allFilesSelected}
       text={selectionCount}
-      tooltip="Selects or deselects all images"
+      tooltip="选中或取消选中所有图片"
       disabled={fileCount === 0}
     />
   );
@@ -112,8 +112,8 @@ const RemoveFilesPopover = observer(() => {
         icon={IconSet.DELETE}
         disabled={uiStore.fileSelection.size === 0}
         onClick={uiStore.openToolbarFileRemover}
-        text="Delete"
-        tooltip="Delete selected missing images from library"
+        text="删除"
+        tooltip="从图库中删除选中的缺失图片"
       />
       <FileRemoval />
     </>

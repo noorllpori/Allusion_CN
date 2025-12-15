@@ -159,7 +159,7 @@ const CriteriaList = observer(() => {
 
         <IconButton
           icon={IconSet.CLOSE}
-          text="Clear"
+          text="清除"
           onClick={(e) => {
             uiStore.clearSearchCriteriaList();
             e.stopPropagation();

@@ -59,7 +59,7 @@ const Placeholder = () => {
   return (
     <section>
       <header>
-        <h2>No image selected</h2>
+        <h2>未选择图片</h2>
       </header>
     </section>
   );

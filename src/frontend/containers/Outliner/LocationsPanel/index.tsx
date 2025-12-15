@@ -160,10 +160,10 @@ const DirectoryMenu = observer(
 
     return (
       <>
-        <MenuItem onClick={handleAddToSearch} text="Add to Search Query" icon={IconSet.SEARCH} />
+        <MenuItem onClick={handleAddToSearch} text="添加到搜索队列" icon={IconSet.SEARCH} />
         <MenuItem
           onClick={handleReplaceSearch}
-          text="Replace Search Query"
+          text="替换搜索队列"
           icon={IconSet.REPLACE}
         />
         <MenuDivider />
@@ -177,7 +177,7 @@ const DirectoryMenu = observer(
         )}
         <MenuItem
           onClick={handleOpenFileExplorer}
-          text="Open in File Browser"
+          text="在文件浏览器中打开"
           icon={IconSet.FOLDER_CLOSE}
         />
       </>
@@ -200,11 +200,11 @@ const LocationTreeContextMenu = observer(({ location, onDelete, onExclude }: ICo
     return (
       <Menu>
         <MenuItem
-          text="Open Recovery Panel"
+          text="打开恢复面板"
           onClick={() => uiStore.openLocationRecovery(location.id)}
           icon={IconSet.WARNING_BROKEN_LINK}
         />
-        <MenuItem text="Delete" onClick={openDeleteDialog} icon={IconSet.DELETE} />
+        <MenuItem text="删除" onClick={openDeleteDialog} icon={IconSet.DELETE} />
       </Menu>
     );
   }
@@ -213,7 +213,7 @@ const LocationTreeContextMenu = observer(({ location, onDelete, onExclude }: ICo
     <Menu>
       <DirectoryMenu location={location} onExclude={onExclude} />
       <MenuDivider />
-      <MenuItem text="Delete" onClick={openDeleteDialog} icon={IconSet.DELETE} />
+      <MenuItem text="删除" onClick={openDeleteDialog} icon={IconSet.DELETE} />
     </Menu>
   );
 });
@@ -573,7 +573,7 @@ const LocationsPanel = observer((props: Partial<MultiSplitPaneProps>) => {
   return (
     <MultiSplitPane
       id="locations"
-      title="Locations"
+      title="目录位置 Locations"
       className={`${isEmpty ? 'attention' : ''} ${isDropping ? 'info' : ''}`}
       headerToolbar={
         <Toolbar controls="location-list" isCompact>
@@ -600,7 +600,7 @@ const LocationsPanel = observer((props: Partial<MultiSplitPaneProps>) => {
       {...props}
     >
       <LocationsTree onDelete={setDeletableLocation} onExclude={setExcludableSubLocation} />
-      {isEmpty && <Callout icon={IconSet.INFO}>Click + to choose a location.</Callout>}
+      {isEmpty && <Callout icon={IconSet.INFO}>点击 + 去选择一个目录位置</Callout>}
 
       <LocationRecoveryDialog />
 

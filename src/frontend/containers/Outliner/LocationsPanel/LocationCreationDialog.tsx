@@ -150,14 +150,13 @@ const LocationCreationDialog = ({ location, onClose }: LocationCreationDialogPro
   return (
     <Dialog
       open
-      title={`Add Location ${location.name}`}
+      title={`添加目录位置 ${location.name}`}
       icon={IconSet.FOLDER_CLOSE}
       describedby="location-add-info"
       onCancel={handleCancel}
     >
       <p id="location-add-info">
-        You can configure the location {location.name} by including only certain subdirectories from
-        the directory.
+        您可以配置位置 {location.name}，使其仅包含该目录中的特定子目录。
         {/* TODO: Switch for importing folder structure as tags */}
         {/* <p>Would you like to create tags from the folder structure of this Location?</p>
         <div style={{ marginLeft: '1rem' }}>
@@ -171,19 +170,19 @@ const LocationCreationDialog = ({ location, onClose }: LocationCreationDialogPro
       </p>
       <form method="dialog" onSubmit={(e) => e.preventDefault()}>
         <fieldset>
-          <legend>Included Subdirectories of {location.name}</legend>
+          <legend>包含的子目录 {location.name}</legend>
           {!sublocationsLoaded ? (
-            <i>{IconSet.LOADING} loading...</i>
+            <i>{IconSet.LOADING} 正在加载...</i>
           ) : location.subLocations.length === 0 ? (
-            <p>No subdirectories found.</p>
+            <p>未找到子目录。</p>
           ) : (
             <SubLocationInclusionTree location={location} />
           )}
         </fieldset>
 
         <fieldset className="dialog-actions">
-          <Button styling="filled" text="Confirm" onClick={handleSubmit} />
-          <Button styling="outlined" onClick={handleCancel} text="Cancel" />
+          <Button styling="filled" text="确认" onClick={handleSubmit} />
+          <Button styling="outlined" onClick={handleCancel} text="关闭" />
         </fieldset>
       </form>
     </Dialog>

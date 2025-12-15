@@ -18,9 +18,19 @@ const About = observer(() => {
       <div id="about" className="light">
         <img src={Logo_About} alt="Logo" />
         <small>
-          Version <strong>{RendererMessenger.getVersion()}</strong>
+          版本 <strong>{RendererMessenger.getVersion()}</strong>
         </small>
+
         <p>
+          感谢使用大蒜重工翻译修改的版本。
+        </p>
+        
+        <ExternalLink url="https://github.com/noorllpori/Allusion_CN">
+          翻译版 https://github.com/noorllpori/Allusion_CN
+        </ExternalLink>
+
+        <p>
+          本应用由一群因共同热爱艺术、设计与软件而聚集的小型团队开发。
           This application was made by a small team of individuals who gathered due to common
           interest in art, design and software.
           <br />
@@ -33,9 +43,11 @@ const About = observer(() => {
           <li>General information</li>
           <li>Download the latest version</li>
         </ul>
+
         <ExternalLink url="https://github.com/allusion-app/Allusion">
-          github.com/allusion-app/Allusion
+          原版链接 https://github.com/allusion-app/Allusion
         </ExternalLink>
+        
         <ul>
           <li>🤓 View the source code</li>
           <li>🐛 Provide feedback and report bugs</li>

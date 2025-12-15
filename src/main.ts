@@ -101,7 +101,7 @@ function createWindow() {
     icon: `${__dirname}/${AppIcon}`,
     // Should be same as body background: Only for split second before css is loaded
     backgroundColor: '#1c1e23',
-    title: 'Allusion',
+    title: '爱鹿寻',
     show: false, // only show once initial loading is finished
     ...previousWindowState,
   };
@@ -141,7 +141,7 @@ function createWindow() {
         // Should be same as body background: Only for split second before css is loaded
         backgroundColor: '#1c1e23',
         parent: mainWindow,
-        title: `${WINDOW_TITLES[frameName]} • Allusion`,
+        title: `${WINDOW_TITLES[frameName]} • 爱鹿寻`,
         frame: true,
         titleBarStyle: 'default',
       },
@@ -400,7 +400,7 @@ function createTrayMenu() {
       },
     ]);
     tray.setContextMenu(trayMenu);
-    tray.setToolTip('Allusion - Your Visual Library');
+    tray.setToolTip('爱鹿寻 - ❤你的私人仓库❤');
     tray.on('click', onTrayClick);
   }
 }

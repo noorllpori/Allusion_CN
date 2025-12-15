@@ -1,7 +1,7 @@
 {
   "name": "allusion",
-  "productName": "Allusion",
-  "version": "1.0.0-rc.10",
+  "productName": "爱鹿寻",
+  "version": "2.0.0",
   "description": "A tool for managing your visual library",
   "main": "build/main.bundle.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "build": {
     "appId": "com.allusion-app.allusion",
-    "productName": "Allusion",
+    "productName": "爱鹿寻",
     "mac": {
       "category": "public.app-category.graphics-design",
       "extraResources": [

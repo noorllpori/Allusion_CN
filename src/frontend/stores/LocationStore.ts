@@ -419,10 +419,10 @@ class LocationStore {
       () => isCancelled,
     );
 
-    AppToaster.show({ message: 'Updating database...', timeout: 0 }, toastKey);
+    AppToaster.show({ message: '更新数据库...', timeout: 0 }, toastKey);
     await this.backend.createFilesFromPath(location.path, files);
 
-    AppToaster.show({ message: `Location "${location.name}" is ready!`, timeout: 5000 }, toastKey);
+    AppToaster.show({ message: `目录 "${location.name}" 已经整装待发!`, timeout: 5000 }, toastKey);
     this.rootStore.fileStore.refetch();
     this.rootStore.fileStore.refetchFileCounts();
   }
@@ -479,7 +479,7 @@ class LocationStore {
     } else {
       await this.backend.createFilesFromPath(fileStats.absolutePath, [file]);
 
-      AppToaster.show({ message: 'New images have been detected.', timeout: 5000 }, 'new-images');
+      AppToaster.show({ message: '已检测到新图像.', timeout: 5000 }, 'new-images');
       // might be called a lot when moving many images into a folder, so debounce it
       fileStore.debouncedRefetch();
     }

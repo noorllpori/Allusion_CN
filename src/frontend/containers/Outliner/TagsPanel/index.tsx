@@ -12,9 +12,9 @@ import TagsTree from './TagsTree';
 
 // Tooltip info
 const enum TooltipInfo {
-  AllImages = 'View all images in library',
-  Untagged = 'View all untagged images',
-  Missing = 'View missing images on your system',
+  AllImages = '查看库中的所有图片',
+  Untagged = '查看所有未标记图片',
+  Missing = '查看系统中缺失的图片',
 }
 
 export const OutlinerActionBar = observer(() => {
