@@ -1,0 +1,35 @@
+{
+  "tag": "标签",
+  "back": "返回",
+  "clear": "清除",
+  "Openinfileexplorer": "在文件资源管理器中打开",
+
+  "Outliner.Savesearch": "保存当前的搜索条件",
+  "Outliner.SavedSearches": "已保存的搜索",
+  
+
+  "imageinfo.Information": "图像信息",
+  "imageinfo.Filename": "文件名",
+  "imageinfo.Dimensions": "尺寸",
+  "imageinfo.Size": "大小",
+  "imageinfo.Imported": "导入时间",
+  "imageinfo.Created": "创建时间",
+  "imageinfo.Modified": "修改时间",
+  "imageinfo.Edit": "编辑",
+  "imageinfo.Cancel": "取消",
+  "imageinfo.Save": "保存",
+  "imageinfo.EditExif": "编辑Exif数据",
+  "imageinfo.ImageSaved": "图片已保存！",
+  "imageinfo.CouldNotSave": "无法保存图片文件",
+
+  "imageinfo.ColorMode": "颜色模式",
+  "imageinfo.BitDepth": "色彩深度",
+  "imageinfo.CreationSoftware": "来源软件",
+  "imageinfo.Creator": "作者",
+  "imageinfo.CreatorURL": "作者链接",
+  "imageinfo.Megapixels": "像素",
+  "imageinfo.Description": "描述简介",
+  "imageinfo.Copyright": "版权信息",
+
+  "Inspector.Pathtofile": "文件路径"
+}

@@ -1,0 +1,15 @@
+{
+  "imageinfo.Information": "Information",
+  "imageinfo.Filename": "Filename",
+  "imageinfo.Dimensions": "Dimensions",
+  "imageinfo.Size": "Size",
+  "imageinfo.Imported": "Imported",
+  "imageinfo.Created": "Created",
+  "imageinfo.Modified": "Modified",
+  "imageinfo.Edit": "Edit",
+  "imageinfo.Cancel": "Cancel",
+  "imageinfo.Save": "Save",
+  "imageinfo.EditExif": "Edit Exif data",
+  "imageinfo.ImageSaved": "Image file saved!",
+  "imageinfo.CouldNotSave": "Could not save image file"
+}

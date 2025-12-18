@@ -8,6 +8,8 @@ import { IconButton, IconSet } from 'widgets';
 import { shell } from 'electron';
 import { IS_PREVIEW_WINDOW } from 'common/window';
 
+import i18n from 'src/i18n';
+
 const Inspector = observer(() => {
   const { uiStore, fileStore } = useStore();
 
@@ -29,14 +31,14 @@ const Inspector = observer(() => {
       </section>
       <section>
         <header>
-          <h2>Path to file</h2>
+          <h2>{i18n.t('Inspector.Pathtofile')}</h2>
         </header>
         <div className="input-file">
           <input readOnly className="input input-file-value" value={path} />
           <IconButton
             icon={IconSet.FOLDER_CLOSE}
             onClick={() => shell.showItemInFolder(path)}
-            text="Open in file explorer"
+            text={i18n.t('Openinfileexplorer')}
           />
         </div>
       </section>

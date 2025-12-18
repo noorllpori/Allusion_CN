@@ -11,6 +11,9 @@ import { usePromise } from '../hooks/usePromise';
 import ExternalLink from './ExternalLink';
 import { AppToaster } from './Toaster';
 
+import i18n from '../../i18n';
+// import { useTranslation } from 'react-i18next';
+
 type CommonMetadata = {
   name: string;
   dimensions: string;
@@ -20,26 +23,16 @@ type CommonMetadata = {
   modified: string;
 };
 
-const commonMetadataLabels: Record<keyof CommonMetadata, string> = {
-  name: 'Filename',
-  dimensions: 'Dimensions',
-  size: 'Size',
-  imported: 'Imported',
-  // TODO: modified in allusion vs modified in system?
-  created: 'Created',
-  modified: 'Modified',
-};
-
 type ExifField = { label: string; modifiable?: boolean; format?: (val: string) => ReactNode };
 
 // Details: https://www.vcode.no/web/resource.nsf/ii2lnug/642.htm
 const exifFields: Record<string, ExifField> = {
-  PhotometricInterpretation: { label: 'Color Mode' },
-  BitsPerSample: { label: 'Bit Depth' },
-  Software: { label: 'Creation Software', modifiable: true },
-  Artist: { label: 'Creator', modifiable: true },
+  PhotometricInterpretation: { label: i18n.t('imageinfo.ColorMode') },
+  BitsPerSample: { label: i18n.t('imageinfo.BitDepth') },
+  Software: { label: i18n.t('imageinfo.CreationSoftware'), modifiable: true },
+  Artist: { label: i18n.t('imageinfo.Creator'), modifiable: true },
   CreatorWorkURL: {
-    label: 'Creator URL',
+    label: i18n.t('imageinfo.CreatorURL'),
     modifiable: true,
     format: function CreatorURL(url?: string) {
       if (!url) {
@@ -48,12 +41,12 @@ const exifFields: Record<string, ExifField> = {
       return <ExternalLink url={url}>{url}</ExternalLink>;
     },
   },
-  ImageDescription: { label: 'Description', modifiable: true },
+  ImageDescription: { label: i18n.t('imageinfo.Description'), modifiable: true },
   Parameters: { label: 'Parameters' },
-  Copyright: { label: 'Copyright', modifiable: true },
+  Copyright: { label: i18n.t('imageinfo.Copyright'), modifiable: true },
   Make: { label: 'Camera Manufacturer' },
   Model: { label: 'Camera Model' },
-  Megapixels: { label: 'Megapixels' },
+  Megapixels: { label: i18n.t('imageinfo.Megapixels') },
   ExposureTime: { label: 'Exposure Time' },
   FNumber: { label: 'F-stop' },
   FocalLength: { label: 'Focal Length' },
@@ -70,6 +63,15 @@ interface ImageInfoProps {
 }
 
 const ImageInfo = ({ file }: ImageInfoProps) => {
+  const commonMetadataLabels: Record<keyof CommonMetadata, string> = {
+    name: i18n.t('imageinfo.Filename'),
+    dimensions: i18n.t('imageinfo.Dimensions'),
+    size: i18n.t('imageinfo.Size'),
+    imported: i18n.t('imageinfo.Imported'),
+    created: i18n.t('imageinfo.Created'),
+    modified: i18n.t('imageinfo.Modified'),
+  };
+
   const { exifTool } = useStore();
 
   const [isEditing, setIsEditing] = useState(false);
@@ -158,7 +160,7 @@ const ImageInfo = ({ file }: ImageInfoProps) => {
   return (
     <form onSubmit={handleEditSubmit} onReset={() => setIsEditing(false)}>
       <header>
-        <h2>Information</h2>
+        <h2>{i18n.t('imageinfo.Information')}</h2>
         <Toolbar controls="file-info" isCompact>
           {isEditing ? (
             <>

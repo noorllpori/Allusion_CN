@@ -20,9 +20,11 @@ import { IExpansionState } from '../../types';
 import { createDragReorderHelper } from '../TreeItemDnD';
 import { triggerContextMenuEvent } from '../utils';
 
+import i18n from 'src/i18n';
+
 // Tooltip info
 const enum Tooltip {
-  Create = '保存当前的搜索条件',
+  Create = 'Outliner.Savesearch',
 }
 
 interface ITreeData {
@@ -386,14 +388,14 @@ const SavedSearchesPanel = observer((props: Partial<MultiSplitPaneProps>) => {
     <SearchDnDProvider value={data.current}>
       <MultiSplitPane
         id="saved-searches"
-        title="已保存的搜索 Saved Searches"
+        title={i18n.t('Outliner.SavedSearches')}
         headerToolbar={
           <Toolbar controls="saved-searches-list" isCompact>
             <ToolbarButton
               icon={IconSet.PLUS}
               text="Save current search"
               onClick={saveCurrentSearch}
-              tooltip={Tooltip.Create}
+              tooltip={i18n.t(Tooltip.Create)}
             />
           </Toolbar>
         }
@@ -405,9 +407,7 @@ const SavedSearchesPanel = observer((props: Partial<MultiSplitPaneProps>) => {
           onDuplicate={searchStore.duplicate}
           onReplace={searchStore.replaceWithActiveSearch}
         />
-        {isEmpty && (
-          <Callout icon={IconSet.INFO}>点击 + 保存当前搜索条件。</Callout>
-        )}
+        {isEmpty && <Callout icon={IconSet.INFO}>点击 + 保存当前搜索条件。</Callout>}
 
         {editableSearch && (
           <SearchItemDialog
