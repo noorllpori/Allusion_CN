@@ -29,6 +29,8 @@ import LocationRecoveryDialog from './LocationRecoveryDialog';
 import { onDragOver as onDragOverFileDnD } from './dnd';
 import { useFileDropHandling } from './useFileDnD';
 
+import i18n from 'src/i18n';
+
 export class LocationTreeItemRevealer extends TreeItemRevealer {
   private locationStore?: LocationStore;
 
@@ -74,8 +76,8 @@ export class LocationTreeItemRevealer extends TreeItemRevealer {
 
 // Tooltip info
 const enum Tooltip {
-  Location = 'Add new Location',
-  Refresh = 'Refresh directories',
+  Location = 'Outliner.AddLocation',
+  Refresh = 'Outliner.RefreshDirectories',
 }
 
 interface ITreeData {
@@ -573,34 +575,34 @@ const LocationsPanel = observer((props: Partial<MultiSplitPaneProps>) => {
   return (
     <MultiSplitPane
       id="locations"
-      title="目录位置 Locations"
+      title={i18n.t('Outliner.Locations')}
       className={`${isEmpty ? 'attention' : ''} ${isDropping ? 'info' : ''}`}
       headerToolbar={
         <Toolbar controls="location-list" isCompact>
           {locationStore.locationList.length > 0 && (
             <ToolbarButton
               icon={IconSet.RELOAD_COMPACT}
-              text="Refresh"
+              text={i18n.t("refresh")}
               onClick={action(() =>
                 locationStore.locationList.forEach((loc) =>
                   loc.refreshSublocations().catch(console.error),
                 ),
               )}
-              tooltip={Tooltip.Refresh}
+              tooltip={i18n.t(Tooltip.Refresh)}
             />
           )}
           <ToolbarButton
             icon={IconSet.PLUS}
             text="New Location"
             onClick={handleChooseWatchedDir}
-            tooltip={Tooltip.Location}
+            tooltip={i18n.t(Tooltip.Location)}
           />
         </Toolbar>
       }
       {...props}
     >
       <LocationsTree onDelete={setDeletableLocation} onExclude={setExcludableSubLocation} />
-      {isEmpty && <Callout icon={IconSet.INFO}>点击 + 去选择一个目录位置</Callout>}
+      {isEmpty && <Callout icon={IconSet.INFO}>{i18n.t('Outliner.LocationsPanel')}</Callout>}
 
       <LocationRecoveryDialog />
 

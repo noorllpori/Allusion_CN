@@ -11,8 +11,7 @@ import { usePromise } from '../hooks/usePromise';
 import ExternalLink from './ExternalLink';
 import { AppToaster } from './Toaster';
 
-import i18n from '../../i18n';
-// import { useTranslation } from 'react-i18next';
+import i18n from 'src/i18n';
 
 type CommonMetadata = {
   name: string;
@@ -167,14 +166,14 @@ const ImageInfo = ({ file }: ImageInfoProps) => {
               <ToolbarButton
                 key="cancel"
                 icon={IconSet.CLOSE}
-                text="Cancel"
+                text={i18n.t('cancel')}
                 tooltip="Cancel changes"
                 type="reset"
               />
               <ToolbarButton
                 key="submit"
                 icon={IconSet.SELECT_CHECKED}
-                text="Save"
+                text={i18n.t('save')}
                 tooltip="Save changes"
                 type="submit"
               />
@@ -183,7 +182,7 @@ const ImageInfo = ({ file }: ImageInfoProps) => {
             <ToolbarButton
               key="edit"
               icon={IconSet.EDIT}
-              text="Edit"
+              text={i18n.t('edit')}
               onClick={() => setIsEditing(true)}
               tooltip="Edit Exif data"
               type="button"

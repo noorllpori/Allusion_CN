@@ -18,6 +18,8 @@ import { ClientTag } from '../../entities/Tag';
 import { LocationTreeItemRevealer } from '../Outliner/LocationsPanel';
 import { TagsTreeItemRevealer } from '../Outliner/TagsPanel/TagsTree';
 
+import i18n from 'src/i18n';
+
 export const MissingFileMenuItems = observer(() => {
   const { uiStore, fileStore } = useStore();
   return (
@@ -47,6 +49,12 @@ export const FileViewerMenuItems = ({ file }: { file: ClientFile }) => {
     uiStore.openPreviewWindow();
   };
 
+  // 打开AI模块面板
+  const handleAiMWindow = () => {
+    uiStore.selectFile(file, !uiStore.fileSelection.has(file));
+    uiStore.openPreviewWindow();
+  };
+
   const handleSearchSimilar = (
     e: React.MouseEvent,
     crit: ClientFileSearchCriteria | ClientFileSearchCriteria[],
@@ -61,11 +69,19 @@ export const FileViewerMenuItems = ({ file }: { file: ClientFile }) => {
 
   return (
     <>
-      <MenuItem onClick={handleViewFullSize} text="View at Full Size" icon={IconSet.SEARCH} />
+      <MenuItem
+        onClick={handleViewFullSize}
+        text={i18n.t('ViewatFullSize')}
+        icon={IconSet.SEARCH}
+      />
       <MenuItem
         onClick={handlePreviewWindow}
-        text="Open In Preview Window"
+        text={i18n.t('OpenInPreviewWindow')}
         icon={IconSet.PREVIEW}
+      />
+      <MenuItem
+        onClick={handleAiMWindow}
+        text="在AI模块中打开"
       />
       <MenuItem
         onClick={uiStore.openToolbarTagPopover}

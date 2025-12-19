@@ -2,10 +2,27 @@
   "tag": "标签",
   "back": "返回",
   "clear": "清除",
+  "cancel": "取消",
+  "save": "保存",
+  "edit": "编辑",
+  "delete": "删除",
+  "confirm": "确认",
+  "close": "关闭",
+  "search": "搜索",
+  "settings": "设置",
+  "help": "帮助",
+  "about": "关于",
+  "yes": "是",
+  "no": "否",
+  "refresh": "刷新",
   "Openinfileexplorer": "在文件资源管理器中打开",
 
   "Outliner.Savesearch": "保存当前的搜索条件",
   "Outliner.SavedSearches": "已保存的搜索",
+  "Outliner.Locations": "目录位置",
+  "Outliner.LocationsPanel": "点击 + 去选择一个目录位置",
+  "Outliner.AddLocation": "添加新的目录位置",
+  "Outliner.RefreshDirectories": "刷新目录列表",
   
 
   "imageinfo.Information": "图像信息",
@@ -31,5 +48,8 @@
   "imageinfo.Description": "描述简介",
   "imageinfo.Copyright": "版权信息",
 
-  "Inspector.Pathtofile": "文件路径"
+  "Inspector.Pathtofile": "文件路径",
+
+  "ViewatFullSize": "全屏显示",
+  "OpenInPreviewWindow": "在预览窗口中打开"
 }

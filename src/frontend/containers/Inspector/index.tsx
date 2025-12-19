@@ -4,6 +4,7 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '../../contexts/StoreContext';
 import FileTags from '../../components/FileTag';
 import ImageInfo from '../../components/ImageInfo';
+import QuickEdit from '../../components/QuickEdit';
 import { IconButton, IconSet } from 'widgets';
 import { shell } from 'electron';
 import { IS_PREVIEW_WINDOW } from 'common/window';
@@ -44,12 +45,21 @@ const Inspector = observer(() => {
       </section>
       {/* Modifying state in preview window is not supported (not in sync updated in main window) */}
       {!IS_PREVIEW_WINDOW && (
+        <div>
         <section>
           <header>
-            <h2>Tags</h2>
+            <h2>{i18n.t('tag')}</h2>
           </header>
           <FileTags file={first} />
         </section>
+        <br />
+        <section>
+          <header>
+            <h2>快捷编辑</h2>
+          </header>
+          <QuickEdit file={first} />
+        </section>
+        </div>
       )}
     </aside>
   );

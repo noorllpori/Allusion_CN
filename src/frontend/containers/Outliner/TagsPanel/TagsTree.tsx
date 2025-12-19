@@ -26,6 +26,8 @@ import { TagItemContextMenu } from './ContextMenu';
 import SearchButton from './SearchButton';
 import { Action, Factory, State, reducer } from './state';
 
+import i18n from 'src/i18n';
+
 export class TagsTreeItemRevealer extends TreeItemRevealer {
   public static readonly instance: TagsTreeItemRevealer = new TagsTreeItemRevealer();
   private constructor() {
@@ -563,7 +565,7 @@ const TagsTree = observer((props: Partial<MultiSplitPaneProps>) => {
   return (
     <MultiSplitPane
       id="tags"
-      title="Tags"
+      title={i18n.t('tag')}
       onKeyDown={handleKeyDown}
       headerProps={{
         onDragOver: handleDragOverAndLeave,
